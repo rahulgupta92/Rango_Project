@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+
+    <head>
+        <title>Classifieds</title>
+    </head>
+
+    <body>
+        <h1>Classifieds says...</h1>
+        hello world! 
+
+        {% if categories %}
+            <ul>
+                {% for category in categories %}
+                <li><a href="/classifieds/category/{{category.url}}">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no categories present.</strong>
+        {% endif %}
+        <a href="/classifieds/about/">About</a><br />
+        <img src="{% static "Twilight_Frost_by_Phil_Jackson.jpg" %}" alt="Picture of frost"/>
+    </body>
+
+</html>
